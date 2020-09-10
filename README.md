@@ -1,12 +1,12 @@
 # ShestakUI_Profile
 Custom profile for ShestakUI
-You can overwtite settings for:
+You can overwtite settings with your checks:
 
-### Fonts (https://github.com/Shestak/ShestakUI/blob/master/ShestakUI/Config/Fonts.lua)
+Fonts (https://github.com/Shestak/ShestakUI/blob/master/ShestakUI/Config/Fonts.lua)
 
-### Positions (https://github.com/Shestak/ShestakUI/blob/master/ShestakUI/Config/Positions.lua)
+Positions (https://github.com/Shestak/ShestakUI/blob/master/ShestakUI/Config/Positions.lua)
 
-### Settings (https://github.com/Shestak/ShestakUI/blob/master/ShestakUI/Config/Settings.lua)
+Settings (https://github.com/Shestak/ShestakUI/blob/master/ShestakUI/Config/Settings.lua)
 
 **Adding custom auras for Filger.**
 ```

@@ -7,7 +7,7 @@
 ShestakUICustomProfile = function()
 	local T, C, L = unpack(ShestakUI)
 
-	-- Change UI settings
+	-- Change UI settings (ShestakUI/Config/Settings.lua)
 	C["general"].welcome_message = false
 	C["misc"].shift_marking = false
 	C["general"].vehicle_mouseover = true
@@ -60,12 +60,12 @@ ShestakUICustomProfile = function()
 	C["stats"].currency_raid = false
 	C["stats"].currency_misc = false
 	
-	-- Change UI fonts
+	-- Change UI fonts (ShestakUI/Config/Fonts.lua)
 	C["font"].stats_font = C.media.normal_font
 	C["font"].stats_font_style = "OUTLINE"
 	C["font"].stats_font_size = 12
 	
-	-- Change UI positions
+	-- Change UI positions (ShestakUI/Config/Positions.lua)
 	C["position"].raid_cooldown = {"TOPLEFT", UIParent, "TOPLEFT", 300, -14}
 	C["position"].bag = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 20}
 	C["position"].bank = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 21, 20}
@@ -77,7 +77,7 @@ ShestakUICustomProfile = function()
 		{"COOLDOWN", {spellID = 313698, filter = "ICD", trigger = "BUFF", duration = 80}}, -- Gift of the Titans
 	}
 	
-	-- Change Blizzard fonts
+	-- Change Blizzard fonts (ShestakUI/Modules/Blizzard/Fonts.lua)
 	local frame = CreateFrame("Frame")
 	frame:RegisterEvent("PLAYER_LOGIN")
 	frame:SetScript("OnEvent", function()

@@ -7,6 +7,7 @@
 ShestakUICustomProfile = function()
 	local T, C, L = unpack(ShestakUI)
 
+	-- Change UI settings
 	C["general"].welcome_message = false
 	C["misc"].shift_marking = false
 	C["general"].vehicle_mouseover = true
@@ -58,16 +59,30 @@ ShestakUICustomProfile = function()
 	C["stats"].currency_professions = false
 	C["stats"].currency_raid = false
 	C["stats"].currency_misc = false
+	
+	-- Change UI fonts
 	C["font"].stats_font = C.media.normal_font
 	C["font"].stats_font_style = "OUTLINE"
 	C["font"].stats_font_size = 12
+	
+	-- Change UI positions
 	C["position"].raid_cooldown = {"TOPLEFT", UIParent, "TOPLEFT", 300, -14}
 	C["position"].bag = {"BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -21, 20}
 	C["position"].bank = {"BOTTOMLEFT", UIParent, "BOTTOMLEFT", 21, 20}
 	C["position"].auto_button = {"BOTTOMLEFT", "oUF_Player", "TOPRIGHT", 33, 83}
 	C["position"].unitframes.arena = {"BOTTOMRIGHT", UIParent, "RIGHT", -55, -70}
 
+	-- Add spell for Filger
 	T.CustomFilgerSpell = {
 		{"COOLDOWN", {spellID = 313698, filter = "ICD", trigger = "BUFF", duration = 80}}, -- Gift of the Titans
 	}
+	
+	-- Change Blizzard fonts
+	local frame = CreateFrame("Frame")
+	frame:RegisterEvent("PLAYER_LOGIN")
+	frame:SetScript("OnEvent", function()
+		GameTooltipHeader:SetFont(C.media.normal_font, 14)
+		Tooltip_Small:SetFont(C.media.normal_font, 10)
+		ChatBubbleFont:SetFont(C.media.normal_font, 15)
+	end)
 end

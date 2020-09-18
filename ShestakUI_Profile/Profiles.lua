@@ -97,4 +97,11 @@ ShestakUICustomProfile = function()
 			ShestakUISettings.RaidLayout = "DPS"
 		end
 	end)
+	
+	-- Change Blizzard CVar
+	local frame = CreateFrame("Frame")
+	frame:RegisterEvent("PLAYER_LOGIN")
+	frame:SetScript("OnEvent", function()
+		SetCVar("lootUnderMouse", 1)
+	end)
 end

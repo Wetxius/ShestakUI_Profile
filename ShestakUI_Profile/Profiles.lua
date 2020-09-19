@@ -4,6 +4,7 @@
 --	ATTENTION: When saving changes to a file encoded file should be in UTF8
 ----------------------------------------------------------------------------------------
 
+-- This only examples, use them as a base for your settings or create your own.
 ShestakUICustomProfile = function()
 	local T, C, L = unpack(ShestakUI)
 

@@ -75,6 +75,7 @@ ShestakUICustomProfile = function()
 
 	-- Add spell for Filger
 	T.CustomFilgerSpell = {
+		{"P_BUFF_ICON", {spellID = 316823, unitID = "player", caster = "player", filter = "BUFF"}}, -- Void Ritual
 		{"COOLDOWN", {spellID = 313698, filter = "ICD", trigger = "BUFF", duration = 80}}, -- Gift of the Titans
 	}
 	

@@ -111,4 +111,14 @@ ShestakUICustomProfile = function()
 	frame:SetScript("OnEvent", function()
 		BottomPanel:Hide()
 	end)
+	
+	-- Set chat font size
+	local frame = CreateFrame("Frame")
+	frame:RegisterEvent("PLAYER_LOGIN")
+	frame:SetScript("OnEvent", function()
+	    for i = 1, NUM_CHAT_WINDOWS do
+		local frame = _G[format("ChatFrame%s", i)]
+		FCF_SetChatWindowFontSize(nil, frame, 15)
+	    end
+	end)
 end

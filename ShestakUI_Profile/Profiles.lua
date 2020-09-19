@@ -90,7 +90,7 @@ ShestakUICustomProfile = function()
 	local frame = CreateFrame("Frame")
 	frame:RegisterEvent("VARIABLES_LOADED")
 	frame:SetScript("OnEvent", function()
-		ShestakUISettings = _ShestakUISettings or {}
+		ShestakUISettings = ShestakUISettings or {}
 		if T.class == "PALADIN" then
 			ShestakUISettings.RaidLayout = "HEAL"
 		else

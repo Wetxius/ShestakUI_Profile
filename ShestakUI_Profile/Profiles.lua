@@ -104,4 +104,11 @@ ShestakUICustomProfile = function()
 	frame:SetScript("OnEvent", function()
 		SetCVar("lootUnderMouse", 1)
 	end)
+	
+	-- Hide Bottom line
+	local frame = CreateFrame("Frame")
+	frame:RegisterEvent("PLAYER_LOGIN")
+	frame:SetScript("OnEvent", function()
+		BottomPanel:Hide()
+	end)
 end

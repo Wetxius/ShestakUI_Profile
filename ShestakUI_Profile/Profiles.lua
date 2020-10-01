@@ -5,6 +5,7 @@
 ----------------------------------------------------------------------------------------
 
 -- This only examples, use them as a base for your settings or create your own.
+-- For more info read wiki
 ShestakUICustomProfile = function()
 	local T, C, L = unpack(ShestakUI)
 
@@ -78,70 +79,4 @@ ShestakUICustomProfile = function()
 		{"P_BUFF_ICON", {spellID = 316823, unitID = "player", caster = "player", filter = "BUFF"}}, -- Void Ritual
 		{"COOLDOWN", {spellID = 313698, filter = "ICD", trigger = "BUFF", duration = 80}}, -- Gift of the Titans
 	}
-	
-	-- Change Blizzard fonts (ShestakUI/Modules/Blizzard/Fonts.lua)
-	local frame = CreateFrame("Frame")
-	frame:RegisterEvent("PLAYER_LOGIN")
-	frame:SetScript("OnEvent", function()
-		GameTooltipHeader:SetFont(C.media.normal_font, 14)
-		Tooltip_Small:SetFont(C.media.normal_font, 10)
-		ChatBubbleFont:SetFont(C.media.normal_font, 15)
-	end)
-	
-	-- Change raid layout depend of class
-	local frame = CreateFrame("Frame")
-	frame:RegisterEvent("VARIABLES_LOADED")
-	frame:SetScript("OnEvent", function()
-		ShestakUISettings = ShestakUISettings or {}
-		if T.class == "PALADIN" then
-			ShestakUISettings.RaidLayout = "HEAL"
-		else
-			ShestakUISettings.RaidLayout = "DPS"
-		end
-	end)
-	
-	-- Change Blizzard CVar
-	local frame = CreateFrame("Frame")
-	frame:RegisterEvent("PLAYER_LOGIN")
-	frame:SetScript("OnEvent", function()
-		SetCVar("lootUnderMouse", 1)
-	end)
-	
-	-- Hide Bottom line
-	local frame = CreateFrame("Frame")
-	frame:RegisterEvent("PLAYER_LOGIN")
-	frame:SetScript("OnEvent", function()
-		BottomPanel:Hide()
-	end)
-	
-	-- Set chat font size
-	local frame = CreateFrame("Frame")
-	frame:RegisterEvent("PLAYER_LOGIN")
-	frame:SetScript("OnEvent", function()
-	    for i = 1, NUM_CHAT_WINDOWS do
-		local frame = _G[format("ChatFrame%s", i)]
-		FCF_SetChatWindowFontSize(nil, frame, 15)
-	    end
-	end)
-	
-	-- Horizontal Experience and Reputation bars
-	local frame = CreateFrame("Frame")
-	frame:RegisterEvent("PLAYER_LOGIN")
-	frame:SetScript("OnEvent", function()
-		if oUF_Player_Experience then
-			oUF_Player_Experience:SetSize(ActionBarAnchor:GetWidth() - 4, 7)
-			oUF_Player_Experience:SetPoint("TOPLEFT", ActionBarAnchor, "TOPLEFT", 2, 13)
-			oUF_Player_Experience:SetOrientation("Horizontal")
-			oUF_Player_Experience.Rested:SetOrientation("Horizontal")
-		end
-		if oUF_Player_Reputation then
-			oUF_Player_Reputation:SetSize(ActionBarAnchor:GetWidth() - 4, 7)
-			if oUF_Player_Experience then
-				oUF_Player_Reputation:SetPoint("TOPLEFT", oUF_Player_Experience, "TOPLEFT", 0, 14)
-			else
-				oUF_Player_Reputation:SetPoint("TOPLEFT", ActionBarAnchor, "TOPLEFT", 2, 13)
-			end
-			oUF_Player_Reputation:SetOrientation("Horizontal")
-		end
-	end)
 end

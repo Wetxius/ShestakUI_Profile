@@ -6,5 +6,6 @@
 ## RequiredDeps: ShestakUI
 
 ## X-Website: http://shestak.org
+## X-Credits: Wetxius
 
 Profiles.lua

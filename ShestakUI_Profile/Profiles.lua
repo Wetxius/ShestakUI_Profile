@@ -123,4 +123,25 @@ ShestakUICustomProfile = function()
 		FCF_SetChatWindowFontSize(nil, frame, 15)
 	    end
 	end)
+	
+	-- Horizontal Experience and Reputation bars
+	local frame = CreateFrame("Frame")
+	frame:RegisterEvent("PLAYER_LOGIN")
+	frame:SetScript("OnEvent", function()
+		if oUF_Player_Experience then
+			oUF_Player_Experience:SetSize(ActionBarAnchor:GetWidth() - 4, 7)
+			oUF_Player_Experience:SetPoint("TOPLEFT", ActionBarAnchor, "TOPLEFT", 2, 13)
+			oUF_Player_Experience:SetOrientation("Horizontal")
+			oUF_Player_Experience.Rested:SetOrientation("Horizontal")
+		end
+		if oUF_Player_Reputation then
+			oUF_Player_Reputation:SetSize(ActionBarAnchor:GetWidth() - 4, 7)
+			if oUF_Player_Experience then
+				oUF_Player_Reputation:SetPoint("TOPLEFT", oUF_Player_Experience, "TOPLEFT", 0, 14)
+			else
+				oUF_Player_Reputation:SetPoint("TOPLEFT", ActionBarAnchor, "TOPLEFT", 2, 13)
+			end
+			oUF_Player_Reputation:SetOrientation("Horizontal")
+		end
+	end)
 end

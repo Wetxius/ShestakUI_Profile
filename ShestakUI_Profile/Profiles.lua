@@ -4,7 +4,7 @@
 --	ATTENTION: When saving changes to a file encoded file should be in UTF8
 ----------------------------------------------------------------------------------------
 
--- Read Wiki for help
+-- Info: https://github.com/Wetxius/ShestakUI_Profile/wiki
 ShestakUICustomProfile = function()
 	local T, C, L = unpack(ShestakUI)
 
